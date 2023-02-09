@@ -1,0 +1,16 @@
+<!-- ngFor is a directive which help in injection javascript in html -->
+<div class="container-fluid  w-75 p-3" >
+<app-add-todo (todoAdd) = "addTodo($event)"></app-add-todo>
+<div *ngIf="this.todos.length===0; else elseBlock">No todos to display</div>
+<ng-template #elseBlock>
+    <div *ngFor="let todo of todos; index as i">
+        <app-todo-item [todo]="todo" [i]="i" (todoDelete)="deleteTodo($event)" (todoCheckbox)="toggleTodo($event)"></app-todo-item>
+    </div>
+   
+    
+</ng-template>
+</div>
+
+<!-- you are passing the todo using for loop from this parent component  -->
+<!-- child component i.e; todo-item is taking todo as  input  -->
+<!-- for deleting you have to write a function  -->

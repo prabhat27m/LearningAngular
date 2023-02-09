@@ -1,0 +1,25 @@
+<form (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="email" class="form-control" name="title" id="title" [(ngModel)]="title">
+
+  </div>
+  <div class="mb-3">
+    <label for="desc" class="form-label">Todo Description</label>
+    <input type="text" class="form-control" name="desc" id="desc" [(ngModel)]="desc">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Add Todo</button>
+</form>
+
+<!-- Bind the form values to the component: In the example above, we're using two-way data binding with the 
+  [(ngModel)] directive to bind the values of the form fields to the name and email properties of the component.
+
+Handle the submit event: The ngSubmit directive is used to bind a submit event to the form. 
+
+In this example, the onSubmit method is called when the form is submitted.
+
+Implement the submit handler: 
+In your component class, you can implement the onSubmit method to handle the form submission. 
+This is where you can access the values of the form fields and perform any actions you need, such as sending the 
+data to a server or storing it in the local storage. -->

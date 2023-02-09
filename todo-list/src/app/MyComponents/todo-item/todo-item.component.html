@@ -1,0 +1,13 @@
+<div class=" todo">
+    
+    <p class="todo-item ">{{todo.sno}}</p>
+    <p [ngClass] ="{'todo-item' : true , 'strike':!this.todo.active}">{{todo.title}}</p>
+    <p [ngClass] ="{'todo-item' : true , 'strike':!this.todo.active}">{{todo.desc}}</p>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="todo{{i}}" (click)="onCheckboxClick(todo)" [checked]="!this.todo.active">
+        <label class="form-check-label" for="todo{{i}}">
+         Toggle Done
+        </label>
+      </div>
+    <button class="btn btn-danger ms-auto" (click)="OnClick(todo)">Delete</button>
+</div>
